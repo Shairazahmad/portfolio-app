@@ -1,0 +1,168 @@
+import React, { useState } from 'react';
+import { NavLink } from 'react-router-dom';
+import { Menu, X, Mail } from 'lucide-react';
+
+const Navbar = () => {
+  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+
+  // Social and Contact links
+  const SOCIAL_LINKS = {
+    github: "https://github.com/Shairazahmad",
+    linkedin: "https://www.linkedin.com/in/shairaz-ahmad-12384b272/",
+    fiverr: "https://www.fiverr.com/users/shaizu_designer",
+    // Gmail web composer link with your email pre-filled in the 'to' field
+    email: "https://mail.google.com/mail/?view=cm&fs=1&to=shairazahmad0@gmail.com",
+  };
+
+  const navLinks = [
+    { name: 'Home', path: '/' },
+    { name: 'About', path: '/about' },
+    { name: 'Projects', path: '/projects' },
+    { name: 'Contact', path: '/contact' },
+  ];
+
+  return (
+    <header className="bg-white border-b border-gray-100 sticky top-0 z-50">
+      <div className="max-w-6xl mx-auto px-6 h-20 flex items-center justify-between">
+        
+        {/* Brand Logo */}
+        <NavLink to="/" className="text-2xl font-bold text-gray-900 tracking-tight">
+          Portfolio<span className="text-teal-500">.</span>
+        </NavLink>
+
+        {/* Desktop Navigation Links */}
+        <nav className="hidden md:flex items-center gap-8 text-sm font-medium text-gray-600">
+          {navLinks.map((link) => (
+            <NavLink
+              key={link.name}
+              to={link.path}
+              className={({ isActive }) =>
+                `relative py-2 transition-colors duration-300 hover:text-teal-600 ${
+                  isActive ? 'text-teal-600 font-semibold' : ''
+                }`
+              }
+            >
+              {({ isActive }) => (
+                <>
+                  {link.name}
+                  <span
+                    className={`absolute bottom-0 left-0 w-full h-[2px] bg-teal-500 transition-transform duration-300 ${
+                      isActive ? 'scale-x-100' : 'scale-x-0'
+                    }`}
+                  />
+                </>
+              )}
+            </NavLink>
+          ))}
+        </nav>
+
+        {/* Desktop Social Links */}
+        <div className="hidden md:flex items-center gap-5 text-gray-500">
+          {/* GitHub */}
+          <a
+            href={SOCIAL_LINKS.github}
+            target="_blank"
+            rel="noopener noreferrer"
+            title="GitHub Profile"
+            className="hover:text-teal-600 transition"
+          >
+            <svg className="w-5 h-5 fill-current" viewBox="0 0 24 24">
+              <path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z" />
+            </svg>
+          </a>
+
+          {/* LinkedIn */}
+          <a
+            href={SOCIAL_LINKS.linkedin}
+            target="_blank"
+            rel="noopener noreferrer"
+            title="LinkedIn Profile"
+            className="hover:text-teal-600 transition"
+          >
+            <svg className="w-5 h-5 fill-current" viewBox="0 0 24 24">
+              <path d="M19 3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h14m-.5 15.5v-5.3a3.26 3.26 0 0 0-3.26-3.26c-.85 0-1.84.52-2.28 1.3v-1.11h-2.79v8.37h2.79v-4.93c0-.77.62-1.4 1.39-1.4a1.4 1.4 0 0 1 1.4 1.4v4.93h2.75M6.88 8.56a1.68 1.68 0 0 0 1.68-1.68c0-.93-.75-1.69-1.68-1.69a1.69 1.69 0 0 0-1.69 1.69c0 .93.76 1.68 1.69 1.68m1.39 9.94v-8.37H5.5v8.37h2.77z"/>
+            </svg>
+          </a>
+
+          {/* Fiverr */}
+          <a
+            href={SOCIAL_LINKS.fiverr}
+            target="_blank"
+            rel="noopener noreferrer"
+            title="Fiverr Profile"
+            className="hover:text-teal-600 transition"
+          >
+            <svg className="w-5 h-5 fill-current" viewBox="0 0 24 24">
+              <path d="M22.5 16.25v-10h-10v-.625c0-1.034.841-1.875 1.875-1.875H16.25V0h-1.875A5.632 5.632 0 0 0 8.75 5.625v.625H6.25V10h2.5v6.25H6.25V20h8.75v-3.75h-2.5V10h6.25v6.25h-2.5V20H25v-3.75h-2.5z"/>
+              <circle cx="20.625" cy="1.875" r="1.875"/>
+            </svg>
+          </a>
+
+          {/* Mail */}
+          <a
+            href={SOCIAL_LINKS.email}
+            target="_blank"
+            rel="noopener noreferrer"
+            title="Send Email via Gmail"
+            className="hover:text-teal-600 transition"
+          >
+            <Mail className="w-5 h-5" />
+          </a>
+        </div>
+
+        {/* Mobile Hamburger Button */}
+        <button
+          onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+          className="md:hidden p-2 text-gray-600 hover:text-teal-600 focus:outline-none"
+        >
+          {mobileMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
+        </button>
+
+      </div>
+
+      {/* Mobile Dropdown Navigation */}
+      {mobileMenuOpen && (
+        <div className="md:hidden bg-white border-b border-gray-100 px-6 py-4 space-y-3">
+          {navLinks.map((link) => (
+            <NavLink
+              key={link.name}
+              to={link.path}
+              onClick={() => setMobileMenuOpen(false)}
+              className={({ isActive }) =>
+                `block text-base font-medium transition-colors ${
+                  isActive ? 'text-teal-600 font-semibold' : 'text-gray-600 hover:text-teal-600'
+                }`
+              }
+            >
+              {link.name}
+            </NavLink>
+          ))}
+          
+          <div className="pt-3 border-t border-gray-100 flex gap-6 text-gray-500">
+            <a href={SOCIAL_LINKS.github} target="_blank" rel="noopener noreferrer" className="hover:text-teal-600">
+              <svg className="w-5 h-5 fill-current" viewBox="0 0 24 24">
+                <path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z" />
+              </svg>
+            </a>
+            <a href={SOCIAL_LINKS.linkedin} target="_blank" rel="noopener noreferrer" className="hover:text-teal-600">
+              <svg className="w-5 h-5 fill-current" viewBox="0 0 24 24">
+                <path d="M19 3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h14m-.5 15.5v-5.3a3.26 3.26 0 0 0-3.26-3.26c-.85 0-1.84.52-2.28 1.3v-1.11h-2.79v8.37h2.79v-4.93c0-.77.62-1.4 1.39-1.4a1.4 1.4 0 0 1 1.4 1.4v4.93h2.75M6.88 8.56a1.68 1.68 0 0 0 1.68-1.68c0-.93-.75-1.69-1.68-1.69a1.69 1.69 0 0 0-1.69 1.69c0 .93.76 1.68 1.69 1.68m1.39 9.94v-8.37H5.5v8.37h2.77z"/>
+              </svg>
+            </a>
+            <a href={SOCIAL_LINKS.fiverr} target="_blank" rel="noopener noreferrer" className="hover:text-teal-600">
+              <svg className="w-5 h-5 fill-current" viewBox="0 0 24 24">
+                <path d="M22.5 16.25v-10h-10v-.625c0-1.034.841-1.875 1.875-1.875H16.25V0h-1.875A5.632 5.632 0 0 0 8.75 5.625v.625H6.25V10h2.5v6.25H6.25V20h8.75v-3.75h-2.5V10h6.25v6.25h-2.5V20H25v-3.75h-2.5z"/>
+                <circle cx="20.625" cy="1.875" r="1.875"/>
+              </svg>
+            </a>
+            <a href={SOCIAL_LINKS.email} target="_blank" rel="noopener noreferrer" className="hover:text-teal-600">
+              <Mail className="w-5 h-5" />
+            </a>
+          </div>
+        </div>
+      )}
+    </header>
+  );
+};
+
+export default Navbar;
