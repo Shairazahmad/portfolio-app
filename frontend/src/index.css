@@ -33,9 +33,9 @@
   --color-olive-900: #343e19;
 }
 
-/* Global Body Background - light olive tint, lighter than the olive-700 header */
+/* Global Body Background - pure white */
 body {
-  background-color: #eff1e9 !important;
+  background-color: #ffffff !important;
   color: #444444;
   margin: 0;
   font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;

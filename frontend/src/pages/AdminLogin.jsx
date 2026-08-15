@@ -37,7 +37,7 @@ const AdminLogin = () => {
         
         {/* Header Icon & Title */}
         <div className="text-center space-y-3">
-          <div className="w-12 h-12 bg-mint-50 rounded-2xl flex items-center justify-center mx-auto text-mint-600">
+          <div className="w-12 h-12 bg-blue-50 rounded-2xl flex items-center justify-center mx-auto text-blue-600">
             <Lock className="w-6 h-6" />
           </div>
           <h2 className="text-2xl font-bold text-gray-900 tracking-tight">
@@ -69,7 +69,7 @@ const AdminLogin = () => {
               value={credentials.username}
               onChange={handleChange}
               placeholder="Admin Username"
-              className="w-full px-4 py-2.5 rounded-xl border border-gray-200 text-sm focus:outline-none focus:border-mint-600 focus:bg-white transition"
+              className="w-full px-4 py-2.5 rounded-xl border border-gray-200 text-sm focus:outline-none focus:border-blue-600 focus:bg-white transition"
             />
           </div>
 
@@ -84,7 +84,7 @@ const AdminLogin = () => {
               value={credentials.password}
               onChange={handleChange}
               placeholder="••••••••"
-              className="w-full px-4 py-2.5 rounded-xl border border-gray-200 text-sm focus:outline-none focus:border-mint-600 focus:bg-white transition"
+              className="w-full px-4 py-2.5 rounded-xl border border-gray-200 text-sm focus:outline-none focus:border-blue-600 focus:bg-white transition"
             />
           </div>
 

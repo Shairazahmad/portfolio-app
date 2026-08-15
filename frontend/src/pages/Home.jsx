@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 
 const Home = () => {
   return (
-    <section className="relative min-h-[calc(100vh-160px)] flex items-center justify-center rounded-3xl overflow-hidden my-4 border border-gray-100">
+    <section className="relative left-1/2 right-1/2 -mx-[50vw] -my-6 w-screen min-h-[calc(100vh-80px)] flex items-center justify-center overflow-hidden">
       
       {/* Background Image Container */}
       <div className="absolute inset-0 z-0">
@@ -13,7 +13,7 @@ const Home = () => {
           className="w-full h-full object-cover object-center opacity-30"
         />
         {/* Soft off-white gradient tint */}
-        <div className="absolute inset-0 bg-gradient-to-r from-[#f8f9fa]/90 via-[#f8f9fa]/75 to-[#f8f9fa]/90" />
+        <div className="absolute inset-0 bg-gradient-to-r from-white/90 via-white/75 to-white/90" />
       </div>
 
       {/* Hero Content */}
@@ -29,7 +29,7 @@ const Home = () => {
         <div>
           <Link
             to="/about"
-            className="inline-block bg-mint hover:bg-mint-700 text-white font-medium text-xs tracking-wider uppercase px-8 py-3.5 rounded-full transition-all duration-300 shadow-md hover:shadow-lg hover:-translate-y-0.5"
+            className="inline-block bg-blue-600 hover:bg-blue-700 text-white font-medium text-xs tracking-wider uppercase px-8 py-3.5 rounded-full transition-all duration-300 shadow-md hover:shadow-lg hover:-translate-y-0.5"
           >
             About Me
           </Link>

@@ -37,7 +37,7 @@ const ProjectCard = ({ project }) => {
       <div className="p-6 flex flex-col flex-grow">
         
         {/* Title */}
-        <h3 className="text-xl font-bold text-gray-900 mb-2 group-hover:text-mint-600 transition">
+        <h3 className="text-xl font-bold text-gray-900 mb-2 group-hover:text-blue-600 transition">
           {title}
         </h3>
 
@@ -88,7 +88,7 @@ const ProjectCard = ({ project }) => {
               href={liveLink}
               target="_blank"
               rel="noopener noreferrer"
-              className="flex items-center gap-1.5 text-mint-600 hover:text-mint-700 font-medium transition"
+              className="flex items-center gap-1.5 text-blue-600 hover:text-blue-700 font-medium transition"
             >
               <span>Live Demo</span>
               <ExternalLink className="w-4 h-4" />

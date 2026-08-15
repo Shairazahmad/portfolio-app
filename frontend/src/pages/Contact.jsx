@@ -26,7 +26,7 @@ const Contact = () => {
       
       {/* Header */}
       <section className="space-y-4 text-center sm:text-left">
-        <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-mint-50 border border-mint-200 text-mint-800 text-xs font-semibold">
+        <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-blue-50 border border-blue-200 text-blue-800 text-xs font-semibold">
           <MessageSquare className="w-3.5 h-3.5" />
           <span>Get in Touch</span>
         </div>
@@ -47,9 +47,9 @@ const Contact = () => {
             
             <a
               href="mailto:contact@example.com"
-              className="flex items-center gap-3 text-sm text-gray-600 hover:text-mint-600 transition"
+              className="flex items-center gap-3 text-sm text-gray-600 hover:text-blue-600 transition"
             >
-              <div className="w-9 h-9 rounded-lg bg-mint-50 flex items-center justify-center text-mint-600 shrink-0">
+              <div className="w-9 h-9 rounded-lg bg-blue-50 flex items-center justify-center text-blue-600 shrink-0">
                 <Mail className="w-4 h-4" />
               </div>
               <span className="truncate">contact@example.com</span>
@@ -59,7 +59,7 @@ const Contact = () => {
               href="https://github.com"
               target="_blank"
               rel="noopener noreferrer"
-              className="flex items-center gap-3 text-sm text-gray-600 hover:text-mint-600 transition"
+              className="flex items-center gap-3 text-sm text-gray-600 hover:text-blue-600 transition"
             >
               <div className="w-9 h-9 rounded-lg bg-gray-50 flex items-center justify-center text-gray-800 shrink-0">
                 <FaGithub className="w-4 h-4" />
@@ -71,7 +71,7 @@ const Contact = () => {
               href="https://linkedin.com"
               target="_blank"
               rel="noopener noreferrer"
-              className="flex items-center gap-3 text-sm text-gray-600 hover:text-mint-600 transition"
+              className="flex items-center gap-3 text-sm text-gray-600 hover:text-blue-600 transition"
             >
               <div className="w-9 h-9 rounded-lg bg-blue-50 flex items-center justify-center text-blue-600 shrink-0">
                 <FaLinkedin className="w-4 h-4" />
@@ -109,7 +109,7 @@ const Contact = () => {
                 value={formData.name}
                 onChange={handleChange}
                 placeholder="Enter your name"
-                className="w-full px-4 py-2.5 rounded-xl border border-gray-200 text-sm focus:outline-none focus:border-mint-600 focus:bg-white transition"
+                className="w-full px-4 py-2.5 rounded-xl border border-gray-200 text-sm focus:outline-none focus:border-blue-600 focus:bg-white transition"
               />
             </div>
 
@@ -124,7 +124,7 @@ const Contact = () => {
                 value={formData.email}
                 onChange={handleChange}
                 placeholder="name@example.com"
-                className="w-full px-4 py-2.5 rounded-xl border border-gray-200 text-sm focus:outline-none focus:border-mint-600 focus:bg-white transition"
+                className="w-full px-4 py-2.5 rounded-xl border border-gray-200 text-sm focus:outline-none focus:border-blue-600 focus:bg-white transition"
               />
             </div>
 
@@ -139,7 +139,7 @@ const Contact = () => {
                 value={formData.message}
                 onChange={handleChange}
                 placeholder="How can I help you?"
-                className="w-full px-4 py-2.5 rounded-xl border border-gray-200 text-sm focus:outline-none focus:border-mint-600 focus:bg-white transition resize-none"
+                className="w-full px-4 py-2.5 rounded-xl border border-gray-200 text-sm focus:outline-none focus:border-blue-600 focus:bg-white transition resize-none"
               />
             </div>
 

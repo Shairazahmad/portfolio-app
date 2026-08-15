@@ -97,7 +97,7 @@ const AdminDashboard = () => {
 
         <button
           type="submit"
-          className="bg-mint-600 text-white px-5 py-2.5 rounded-xl text-sm font-medium hover:bg-mint-700 transition"
+          className="bg-blue-600 text-white px-5 py-2.5 rounded-xl text-sm font-medium hover:bg-blue-700 transition"
         >
           Add Project to Portfolio
         </button>
@@ -119,7 +119,7 @@ const AdminDashboard = () => {
                   href={proj.githubLink} 
                   target="_blank" 
                   rel="noreferrer" 
-                  className="text-xs text-mint-600 flex items-center gap-1 font-medium"
+                  className="text-xs text-blue-600 flex items-center gap-1 font-medium"
                 >
                   GitHub <ExternalLink className="w-3 h-3" />
                 </a>
