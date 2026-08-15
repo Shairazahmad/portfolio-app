@@ -44,7 +44,7 @@ const Projects = () => {
       
       {/* Header */}
       <section className="space-y-4">
-        <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-teal-50 border border-teal-200 text-teal-800 text-xs font-semibold">
+        <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-mint-50 border border-mint-200 text-mint-800 text-xs font-semibold">
           <FolderGit2 className="w-3.5 h-3.5" />
           <span>Project Gallery</span>
         </div>
@@ -67,7 +67,7 @@ const Projects = () => {
             placeholder="Search by title, description, or tech..."
             value={searchQuery}
             onChange={(e) => setSearchQuery(e.target.value)}
-            className="w-full pl-10 pr-4 py-2 bg-gray-50 border border-gray-200 rounded-xl text-sm focus:outline-none focus:border-teal-600 focus:bg-white transition"
+            className="w-full pl-10 pr-4 py-2 bg-gray-50 border border-gray-200 rounded-xl text-sm focus:outline-none focus:border-mint-600 focus:bg-white transition"
           />
         </div>
 
@@ -77,7 +77,7 @@ const Projects = () => {
             onClick={() => setFilterFeatured(!filterFeatured)}
             className={`flex items-center gap-2 px-4 py-2 rounded-xl text-sm font-medium border transition ${
               filterFeatured
-                ? 'bg-teal-600 text-white border-teal-600'
+                ? 'bg-mint-600 text-white border-mint-600'
                 : 'bg-gray-50 text-gray-700 border-gray-200 hover:bg-gray-100'
             }`}
           >

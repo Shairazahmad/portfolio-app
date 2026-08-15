@@ -29,7 +29,7 @@ const Home = () => {
         <div>
           <Link
             to="/about"
-            className="inline-block bg-mint hover:bg-mint-dark text-white font-medium text-xs tracking-wider uppercase px-8 py-3.5 rounded-full transition-all duration-300 shadow-md hover:shadow-lg hover:-translate-y-0.5"
+            className="inline-block bg-mint hover:bg-mint-700 text-white font-medium text-xs tracking-wider uppercase px-8 py-3.5 rounded-full transition-all duration-300 shadow-md hover:shadow-lg hover:-translate-y-0.5"
           >
             About Me
           </Link>

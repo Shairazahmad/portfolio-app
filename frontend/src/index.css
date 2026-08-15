@@ -1,36 +1,44 @@
 @import "tailwindcss";
 
-/* Global Body Background */
+/* Accent color scale, anchored on the site's #34b7a6 mint accent
+   (matches the Kelly template's --accent-color: #34b7a7).
+   Defining these in @theme makes Tailwind generate real utilities:
+   bg-mint, text-mint, border-mint, bg-mint-50 ... bg-mint-900,
+   plus opacity modifiers like bg-mint/20, hover:text-mint-700, etc. */
+@theme {
+  --color-mint: #34b7a6;
+  --color-mint-50: #f3fcfb;
+  --color-mint-100: #def7f4;
+  --color-mint-200: #bbede6;
+  --color-mint-300: #8ae0d5;
+  --color-mint-400: #58d0c0;
+  --color-mint-500: #37c3b1;
+  --color-mint-600: #34b7a6;
+  --color-mint-700: #2c9184;
+  --color-mint-800: #25746a;
+  --color-mint-900: #1f5c54;
+
+  /* Olive green scale, anchored on #5b6b31, used for the header
+     and (lighter shades) for the page body background. */
+  --color-olive: #5b6b31;
+  --color-olive-50: #f8f9f6;
+  --color-olive-100: #eff1e9;
+  --color-olive-200: #dde3cf;
+  --color-olive-300: #c6d0a9;
+  --color-olive-400: #a8bb77;
+  --color-olive-500: #8fa84d;
+  --color-olive-600: #71853d;
+  --color-olive-700: #5b6b31;
+  --color-olive-800: #485625;
+  --color-olive-900: #343e19;
+}
+
+/* Global Body Background - light olive tint, lighter than the olive-700 header */
 body {
-  background-color: #f8f9fa !important;
+  background-color: #eff1e9 !important;
   color: #444444;
   margin: 0;
   font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-}
-
-/* Custom Mint Color Utility Classes (#34b7a6) */
-.bg-mint {
-  background-color: #34b7a6 !important;
-}
-
-.text-mint {
-  color: #34b7a6 !important;
-}
-
-.border-mint {
-  border-color: #34b7a6 !important;
-}
-
-.hover\:bg-mint-dark:hover {
-  background-color: #2ba292 !important;
-}
-
-.hover\:text-mint:hover {
-  color: #34b7a6 !important;
-}
-
-.bg-navbar-glass {
-  background-color: rgba(248, 249, 250, 0.85) !important;
 }
 
 /* --- Keep your existing custom CSS below --- */

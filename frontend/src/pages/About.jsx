@@ -28,7 +28,7 @@ const About = () => {
       
       {/* Intro / Header */}
       <section className="space-y-4">
-        <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-teal-50 border border-teal-200 text-teal-800 text-xs font-semibold">
+        <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-mint-50 border border-mint-200 text-mint-800 text-xs font-semibold">
           <Sparkles className="w-3.5 h-3.5" />
           <span>About Me</span>
         </div>
@@ -45,7 +45,7 @@ const About = () => {
       {/* Focus Areas */}
       <section className="grid grid-cols-1 md:grid-cols-3 gap-6">
         <div className="p-6 rounded-2xl bg-white border border-gray-100 shadow-sm space-y-3">
-          <div className="w-10 h-10 rounded-xl bg-teal-50 flex items-center justify-center text-teal-600">
+          <div className="w-10 h-10 rounded-xl bg-mint-50 flex items-center justify-center text-mint-600">
             <Globe className="w-5 h-5" />
           </div>
           <h3 className="font-bold text-gray-900 text-lg">Full-Stack Development</h3>
@@ -55,7 +55,7 @@ const About = () => {
         </div>
 
         <div className="p-6 rounded-2xl bg-white border border-gray-100 shadow-sm space-y-3">
-          <div className="w-10 h-10 rounded-xl bg-teal-50 flex items-center justify-center text-teal-600">
+          <div className="w-10 h-10 rounded-xl bg-mint-50 flex items-center justify-center text-mint-600">
             <Cpu className="w-5 h-5" />
           </div>
           <h3 className="font-bold text-gray-900 text-lg">System Logic & Architecture</h3>
@@ -65,7 +65,7 @@ const About = () => {
         </div>
 
         <div className="p-6 rounded-2xl bg-white border border-gray-100 shadow-sm space-y-3">
-          <div className="w-10 h-10 rounded-xl bg-teal-50 flex items-center justify-center text-teal-600">
+          <div className="w-10 h-10 rounded-xl bg-mint-50 flex items-center justify-center text-mint-600">
             <Terminal className="w-5 h-5" />
           </div>
           <h3 className="font-bold text-gray-900 text-lg">API Integrations</h3>
@@ -78,7 +78,7 @@ const About = () => {
       {/* Skills Matrix */}
       <section className="space-y-6">
         <div className="flex items-center gap-2 text-2xl font-bold text-gray-900">
-          <Layers className="w-6 h-6 text-teal-600" />
+          <Layers className="w-6 h-6 text-mint-600" />
           <h2>Technical Skills & Concepts</h2>
         </div>
 
@@ -94,7 +94,7 @@ const About = () => {
               <ul className="grid grid-cols-2 gap-2 text-sm text-gray-600">
                 {skillList.map((skill) => (
                   <li key={skill} className="flex items-center gap-2">
-                    <CheckCircle2 className="w-4 h-4 text-teal-600 shrink-0" />
+                    <CheckCircle2 className="w-4 h-4 text-mint-600 shrink-0" />
                     <span>{skill}</span>
                   </li>
                 ))}
@@ -107,7 +107,7 @@ const About = () => {
       {/* Education & Academic Background */}
       <section className="space-y-6">
         <div className="flex items-center gap-2 text-2xl font-bold text-gray-900">
-          <GraduationCap className="w-6 h-6 text-teal-600" />
+          <GraduationCap className="w-6 h-6 text-mint-600" />
           <h2>Education & Academic Focus</h2>
         </div>
 
@@ -116,7 +116,7 @@ const About = () => {
             <h3 className="text-lg font-bold text-gray-900">
               Bachelor of Science in Computer Science / Software Engineering
             </h3>
-            <span className="text-xs font-semibold text-teal-700 bg-teal-50 px-3 py-1 rounded-full w-fit">
+            <span className="text-xs font-semibold text-mint-700 bg-mint-50 px-3 py-1 rounded-full w-fit">
               Undergraduate
             </span>
           </div>
