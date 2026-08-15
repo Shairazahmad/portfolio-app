@@ -10,9 +10,10 @@ const Home = () => {
         <img
           src="https://images.unsplash.com/photo-1517694712202-14dd9538aa97?q=80&w=1920&auto=format&fit=crop"
           alt="Developer Workspace"
-          className="w-full h-full object-cover object-center opacity-40"
+          className="w-full h-full object-cover object-center opacity-30"
         />
-        <div className="absolute inset-0 bg-gradient-to-r from-slate-50/90 via-slate-50/70 to-slate-50/90" />
+        {/* Soft off-white gradient tint */}
+        <div className="absolute inset-0 bg-gradient-to-r from-[#f8f9fa]/90 via-[#f8f9fa]/75 to-[#f8f9fa]/90" />
       </div>
 
       {/* Hero Content */}
@@ -28,7 +29,7 @@ const Home = () => {
         <div>
           <Link
             to="/about"
-            className="inline-block bg-teal-500 hover:bg-teal-600 text-white font-medium text-xs tracking-wider uppercase px-8 py-3.5 rounded-full transition-all duration-300 shadow-md hover:shadow-lg hover:-translate-y-0.5"
+            className="inline-block bg-mint hover:bg-mint-dark text-white font-medium text-xs tracking-wider uppercase px-8 py-3.5 rounded-full transition-all duration-300 shadow-md hover:shadow-lg hover:-translate-y-0.5"
           >
             About Me
           </Link>

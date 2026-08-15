@@ -13,7 +13,8 @@ import AdminDashboard from './pages/AdminDashboard';
 function App() {
   return (
     <Router>
-      <div className="min-h-screen flex flex-col bg-slate-50/50 text-gray-900 selection:bg-teal-100 selection:text-teal-900">
+      {/* Replaced bg-slate-50/50 with transparent background and updated selection colors to #34b7a6 */}
+      <div className="min-h-screen flex flex-col bg-transparent text-gray-900 selection:bg-[#34b7a6]/20 selection:text-[#34b7a6]">
         <Navbar />
         
         <main className="flex-grow max-w-6xl w-full mx-auto px-6 py-6">
@@ -24,7 +25,7 @@ function App() {
             <Route path="/projects" element={<Projects />} />
             <Route path="/contact" element={<Contact />} />
 
-            {/* Direct Admin Route (No Login Required) */}
+            {/* Direct Admin Route */}
             <Route path="/admin" element={<AdminDashboard />} />
 
             {/* Fallback Route */}
