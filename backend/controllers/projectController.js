@@ -33,7 +33,7 @@ const getProjectById = async (req, res) => {
 // @access  Private
 const createProject = async (req, res) => {
   try {
-    const { title, description, githubLink, liveLink, featured } = req.body;
+    const { title, description, githubLink, liveLink, featured, platform } = req.body;
 
     // Process Cloudinary image URLs if files uploaded
     let images = [];
@@ -50,6 +50,7 @@ const createProject = async (req, res) => {
       githubLink,
       liveLink: liveLink || '',
       featured: featured === 'true' || featured === true,
+      platform: platform === 'app' ? 'app' : 'web',
       images,
       languages,
     });
@@ -72,7 +73,7 @@ const updateProject = async (req, res) => {
       return res.status(404).json({ message: 'Project not found' });
     }
 
-    const { title, description, githubLink, liveLink, featured } = req.body;
+    const { title, description, githubLink, liveLink, featured, platform } = req.body;
 
     // Check if GitHub Link changed — if so, re-fetch language bytes
     if (githubLink && githubLink !== project.githubLink) {
@@ -84,6 +85,7 @@ const updateProject = async (req, res) => {
     if (description) project.description = description;
     if (liveLink !== undefined) project.liveLink = liveLink;
     if (featured !== undefined) project.featured = featured === 'true' || featured === true;
+    if (platform === 'web' || platform === 'app') project.platform = platform;
 
     // Append new uploaded images if provided
     if (req.files && req.files.length > 0) {

@@ -26,6 +26,11 @@ const projectSchema = new mongoose.Schema(
         type: String, // Cloudinary image URLs
       },
     ],
+    platform: {
+      type: String,
+      enum: ['web', 'app'],
+      default: 'web',
+    },
     languages: {
       type: Map,
       of: Number,
