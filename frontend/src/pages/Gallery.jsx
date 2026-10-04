@@ -1,6 +1,6 @@
 import React, { useState, useEffect, useMemo } from 'react';
 import { Sparkles, ImageOff } from 'lucide-react';
-import { fetchProjects } from '../services/api';
+import { fetchGithubProjects } from '../services/api';
 
 const Gallery = () => {
   const [projects, setProjects] = useState([]);

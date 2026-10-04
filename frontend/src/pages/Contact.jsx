@@ -1,9 +1,9 @@
 import React, { useState } from 'react';
-import { Mail, MessageSquare, CheckCircle, AlertCircle, Send } from 'lucide-react';
-import { FaGithub, FaLinkedin } from 'react-icons/fa';
+import { Mail, MessageSquare, CheckCircle, AlertCircle, Send, MapPin, Clock, Globe } from 'lucide-react';
+import { PERSONAL_INFO } from '../config/data';
 
 const Contact = () => {
-  const [formData, setFormData] = useState({ name: '', email: '', message: '' });
+  const [formData, setFormData] = useState({ name: '', email: '', subject: 'Web Development', message: '' });
   const [status, setStatus] = useState({ loading: false, success: false, error: null });
 
   const handleChange = (e) => {
@@ -14,11 +14,14 @@ const Contact = () => {
     e.preventDefault();
     setStatus({ loading: true, success: false, error: null });
 
-    // Simple simulated submission handler
-    setTimeout(() => {
-      setStatus({ loading: false, success: true, error: null });
-      setFormData({ name: '', email: '', message: '' });
-    }, 1000);
+    try {
+      setTimeout(() => {
+        setStatus({ loading: false, success: true, error: null });
+        setFormData({ name: '', email: '', subject: 'Web Development', message: '' });
+      }, 1000);
+    } catch (err) {
+      setStatus({ loading: false, success: false, error: 'Failed to send message. Please try again later.' });
+    }
   };
 
   return (
@@ -31,53 +34,62 @@ const Contact = () => {
           <span>Get in Touch</span>
         </div>
         <h1 className="text-4xl font-extrabold text-gray-900 tracking-tight sm:text-5xl">
-          Let’s Connect & Collaborate
+          Let’s Connect &amp; Collaborate
         </h1>
         <p className="text-lg text-gray-600 max-w-2xl leading-relaxed">
-          Have a project in mind, an inquiry about my work, or want to discuss software development opportunities? Feel free to drop me a message.
+          Have a project in mind, need custom web or mobile development, or want to discuss potential software solutions? Drop me a message below.
         </p>
       </section>
 
       <div className="grid grid-cols-1 md:grid-cols-3 gap-8 items-start">
         
-        {/* Left Column: Direct Links */}
+        {/* Left Column: Key Contact Details */}
         <div className="space-y-4 md:col-span-1">
-          <div className="p-6 rounded-2xl bg-white border border-gray-100 shadow-sm space-y-4">
-            <h3 className="text-lg font-bold text-gray-900">Direct Channels</h3>
+          <div className="p-6 rounded-2xl bg-white border border-gray-100 shadow-sm space-y-5">
+            <h3 className="text-lg font-bold text-gray-900 border-b border-gray-100 pb-3">
+              Contact Info
+            </h3>
             
             <a
-              href="mailto:contact@example.com"
+              href={PERSONAL_INFO.socials.emailCompose}
+              target="_blank"
+              rel="noopener noreferrer"
               className="flex items-center gap-3 text-sm text-gray-600 hover:text-blue-600 transition"
             >
               <div className="w-9 h-9 rounded-lg bg-blue-50 flex items-center justify-center text-blue-600 shrink-0">
                 <Mail className="w-4 h-4" />
               </div>
-              <span className="truncate">contact@example.com</span>
+              <span className="truncate font-medium">{PERSONAL_INFO.email}</span>
             </a>
 
-            <a
-              href="https://github.com"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="flex items-center gap-3 text-sm text-gray-600 hover:text-blue-600 transition"
-            >
-              <div className="w-9 h-9 rounded-lg bg-gray-50 flex items-center justify-center text-gray-800 shrink-0">
-                <FaGithub className="w-4 h-4" />
-              </div>
-              <span>GitHub Profile</span>
-            </a>
-
-            <a
-              href="https://linkedin.com"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="flex items-center gap-3 text-sm text-gray-600 hover:text-blue-600 transition"
-            >
+            <div className="flex items-center gap-3 text-sm text-gray-600">
               <div className="w-9 h-9 rounded-lg bg-blue-50 flex items-center justify-center text-blue-600 shrink-0">
-                <FaLinkedin className="w-4 h-4" />
+                <MapPin className="w-4 h-4" />
               </div>
-              <span>LinkedIn Profile</span>
-            </a>
+              <span className="font-medium">{PERSONAL_INFO.location}</span>
+            </div>
+
+            <div className="flex items-center gap-3 text-sm text-gray-600">
+              <div className="w-9 h-9 rounded-lg bg-blue-50 flex items-center justify-center text-blue-600 shrink-0">
+                <Clock className="w-4 h-4" />
+              </div>
+              <span className="font-medium">Response time: ~24 hrs</span>
+            </div>
+
+            <div className="pt-2 border-t border-gray-100">
+              <span className="text-xs text-gray-500 font-semibold uppercase tracking-wider block mb-3">
+                Hire On Freelance
+              </span>
+              <a
+                href={PERSONAL_INFO.socials.fiverr}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-2 text-xs font-semibold text-emerald-700 bg-emerald-50 border border-emerald-200 px-3 py-1.5 rounded-lg hover:bg-emerald-100 transition"
+              >
+                <Globe className="w-3.5 h-3.5" />
+                Fiverr Profile
+              </a>
+            </div>
           </div>
         </div>
 
@@ -98,34 +110,54 @@ const Contact = () => {
           )}
 
           <form onSubmit={handleSubmit} className="space-y-5">
-            <div>
-              <label className="block text-xs font-semibold uppercase text-gray-700 tracking-wider mb-2">
-                Your Name
-              </label>
-              <input
-                type="text"
-                name="name"
-                required
-                value={formData.name}
-                onChange={handleChange}
-                placeholder="Enter your name"
-                className="w-full px-4 py-2.5 rounded-xl border border-gray-200 text-sm focus:outline-none focus:border-blue-600 focus:bg-white transition"
-              />
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+              <div>
+                <label className="block text-xs font-semibold uppercase text-gray-700 tracking-wider mb-2">
+                  Your Name
+                </label>
+                <input
+                  type="text"
+                  name="name"
+                  required
+                  value={formData.name}
+                  onChange={handleChange}
+                  placeholder="John Doe"
+                  className="w-full px-4 py-2.5 rounded-xl border border-gray-200 text-sm focus:outline-none focus:border-blue-600 focus:bg-white transition"
+                />
+              </div>
+
+              <div>
+                <label className="block text-xs font-semibold uppercase text-gray-700 tracking-wider mb-2">
+                  Email Address
+                </label>
+                <input
+                  type="email"
+                  name="email"
+                  required
+                  value={formData.email}
+                  onChange={handleChange}
+                  placeholder="name@example.com"
+                  className="w-full px-4 py-2.5 rounded-xl border border-gray-200 text-sm focus:outline-none focus:border-blue-600 focus:bg-white transition"
+                />
+              </div>
             </div>
 
             <div>
               <label className="block text-xs font-semibold uppercase text-gray-700 tracking-wider mb-2">
-                Email Address
+                Service / Inquiry Type
               </label>
-              <input
-                type="email"
-                name="email"
-                required
-                value={formData.email}
+              <select
+                name="subject"
+                value={formData.subject}
                 onChange={handleChange}
-                placeholder="name@example.com"
                 className="w-full px-4 py-2.5 rounded-xl border border-gray-200 text-sm focus:outline-none focus:border-blue-600 focus:bg-white transition"
-              />
+              >
+                <option value="Web Development">Web Development</option>
+                <option value="App Development">Mobile App Development</option>
+                <option value="Bug Fixes & Optimization">Bug Fixes &amp; Code Optimization</option>
+                <option value="UI/UX Design">Graphic &amp; UI Design</option>
+                <option value="General Inquiry">General Discussion</option>
+              </select>
             </div>
 
             <div>
@@ -138,7 +170,7 @@ const Contact = () => {
                 rows="5"
                 value={formData.message}
                 onChange={handleChange}
-                placeholder="How can I help you?"
+                placeholder="Tell me about your project requirements or inquiry..."
                 className="w-full px-4 py-2.5 rounded-xl border border-gray-200 text-sm focus:outline-none focus:border-blue-600 focus:bg-white transition resize-none"
               />
             </div>

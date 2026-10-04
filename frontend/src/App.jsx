@@ -1,20 +1,34 @@
-import React from 'react';
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import React, { useEffect } from 'react';
+import { BrowserRouter as Router, Routes, Route, useLocation } from 'react-router-dom';
 import Navbar from './components/Navbar';
 import Footer from './components/Footer';
 
 // Pages
 import Home from './pages/Home';
 import About from './pages/About';
-import Resume from './pages/Resume';
 import Projects from './pages/Projects';
 import Gallery from './pages/Gallery';
 import Contact from './pages/Contact';
-import AdminDashboard from './pages/AdminDashboard';
+
+// Automatically scrolls to top on route change
+const ScrollToTop = () => {
+  const { pathname } = useLocation();
+
+  useEffect(() => {
+    window.scrollTo({
+      top: 0,
+      left: 0,
+      behavior: 'instant',
+    });
+  }, [pathname]);
+
+  return null;
+};
 
 function App() {
   return (
     <Router>
+      <ScrollToTop />
       {/* Replaced bg-slate-50/50 with transparent background and updated selection colors to #34b7a6 */}
       <div className="min-h-screen flex flex-col bg-transparent text-gray-900 selection:bg-[#34b7a6]/20 selection:text-[#34b7a6]">
         <Navbar />
@@ -24,13 +38,9 @@ function App() {
             {/* Public Routes */}
             <Route path="/" element={<Home />} />
             <Route path="/about" element={<About />} />
-            <Route path="/resume" element={<Resume />} />
             <Route path="/projects" element={<Projects />} />
             <Route path="/gallery" element={<Gallery />} />
             <Route path="/contact" element={<Contact />} />
-
-            {/* Direct Admin Route */}
-            <Route path="/admin" element={<AdminDashboard />} />
 
             {/* Fallback Route */}
             <Route path="*" element={<Home />} />
